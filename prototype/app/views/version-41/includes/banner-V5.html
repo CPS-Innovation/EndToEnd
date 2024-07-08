@@ -1,5 +1,6 @@
 <style>
  main.case-files {padding-top:0 !important}
+ 
  #secondary-navigation ul li a {
     color: #1d70b8;
     text-decoration: none;
@@ -50,7 +51,7 @@
     border-top: 8px solid #1d70b8;
     position: absolute;
     left: 135px;
-    top: 21px;
+    top: 9px;
 }
 
 
@@ -76,9 +77,12 @@
 }
 
 .dropdown-menu li  {
-    display:block;
-    padding: 10px 15px;
-    font-weight:400;
+       box-sizing: border-box;
+    height: 3.125rem;
+    padding: 0 15px;
+    float: left;
+    line-height: 50px;
+    position: relative;
 }
 
 .dropdown-menu li a {
@@ -91,6 +95,36 @@
 .menu-item.show .dropdown-menu {
     display: flex;
     flex-direction: column;
+}
+
+#test-nav h1 {
+    position: relative;
+}
+
+#test-nav h1:after {
+    position: absolute;
+    content: '';
+    right: -20px;
+    top: 0;
+    bottom: 0;
+/*    border-left: 32px solid #f3f2f1;
+    border-bottom: 32px solid transparent;
+    border-top: 30px solid transparent;*/
+    border-left: 22px solid #f3f2f1;
+    border-bottom: 22px solid transparent;
+    border-top: 20px solid transparent;
+/*    test*/
+}
+
+#test-nav h1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #f3f2f1;
+    left: -1000em;
+    z-index: 1;
+    right: 0;
 }
 
 </style>
@@ -139,7 +173,18 @@
                     </span>
                 </a>
             </div>
-            <div class="govuk-header__logo right">
+            <div style="margin-left:auto; width:100%; margin-top:-4px">
+             <form action="B-search-results" method="get">
+                    <fieldset style="margin-bottom:0; padding:0; border:0">
+                        <div class="govuk-form-group" style="margin-left:auto;width:75%;display:flex; margin-bottom:0 ">
+                            <!-- <label class="govuk-label govuk-label--s" for="searchURN">Search all cases</label> -->
+                            <input class="govuk-input govuk-!-width-full" id="searchURN" name="searchURN" type="text" value="" placeholder="  Search all cases">                         
+                            <button type="submit" class="govuk-button search" style="margin-bottom:0;height:36px;margin-top:2px;margin-left:-2px">Search</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+<!--             <div class="govuk-header__logo right">
                 <a href="" class="username">user_name_1983</a>
                 <div class="user-settings">
                     <div class="govuk-form-group">
@@ -214,7 +259,7 @@
                         <button type="button" class="govuk-button govuk-!-margin-bottom-3" onclick="location.href='../../prototype-admin/clear-data';">Clear data</button>
                     </div>                
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </header>
@@ -231,15 +276,14 @@
                     <li class="my-tasks"><a href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/C-task-list">Tasks</a></li>
 
                     <li class="my-cases"><a href="D-my-cases">Cases</a></li>
-                    <li class="menu-item dropdown" style=" margin-left:auto; float: right; margin-right: 13px;"><a href="" target="_blank" class="classicNav dropdown-toggle">CMS Classic</a>
+               <!--      <li class="menu-item dropdown" style=" margin-left:auto; float: right; margin-right: 13px;"><a href="" target="_blank" class="classicNav dropdown-toggle">CMS Classic</a>
                         <ul class="dropdown-menu">
                             <li><a href="I-CMS-Classic">View summary</a></li>
                             <li><a href="I-CMS-Classic">Task list </a></li>
                             <li><a href="I-CMS-Classic">Case overview </a></li>
                              <li><a href="I-CMS-Classic">Comms screen </a></li>
-                            <!-- <li><a href="#seo">Yet more </a></li> -->
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- <li class=""><a href="J-CMS-modern" target="_blank">CMS Modern</a></li> -->
                 </ul>
             </div>
@@ -259,13 +303,29 @@
 </nav>
 <nav class="cps-bar-wrapper" id="secondary-navigation" style="background:#fff; z-index:9">
         <div class="govuk-width-container">
-        <div class="govuk-grid-row">
+               <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <ul style="display:flex; margin:10px 0;">
+                <div class="case-info" id="test-nav" style="display:inline-block; float:left">
+                    <h1 class="govuk-heading-s" style="margin:0; padding: 0.55em 0.5em; background: #f3f2f1;">
+                        <span style="position: relative; z-index:2; margin-left:-12px">McLove, Eoin<!-- <span style="display:block; font-size:14px; font-weight:400; margin-left:-12px">45AA209820/1
+
+</span> --></span>
+                    </h1>
+                </div>
+                <ul style="display:flex; margin:10px 0; ">
                     <li class="sub-overview" style="margin-left:-17px"><a href="https://www.figma.com/proto/zNeiezQ0KQCAlE5HQM7RuG/Work-Management-App-%E2%80%93-Beta-(5th-June)?node-id=109-89395&%3Bviewport=744%2C1584%2C0.15&%3Bt=xkxDs5AOxz96MhVO-0&%3Bscaling=min-zoom&%3Bcontent-scaling=fixed&%3Bstarting-point-node-id=109%3A87142">Overview</a></li>
-                    <li class="sub-case"><a href="F-casework-app">Materials</a></li>
-                    <li class="sub-review"><a href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/L-case-review">Review</a></li>
+                    <li class="sub-case"><a href="https://as-web-endtoend-ux-dev.azurewebsites.net/version-41/2-cps-user-journey/F-casework-app">Materials</a></li>
+                    <li class="sub-review"><a href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/L-case-review-html">Review</a></li>
+                    <li class="sub-bundle"><a href="">Bundle</a></li>
                     <!-- <li class="" style=""><a href="I-CMS-Classic" target="_blank">CMS Classic</a></li> -->
+                    <li class="menu-item dropdown" style=" margin-left:auto; float: right; margin-right: 13px;"><a href="" target="_blank" class="classicNav dropdown-toggle">CMS Classic</a>
+                        <ul class="dropdown-menu" style="left: inherit; right:0;">
+                            <li><a href="I-CMS-Classic">Task list</a></li>
+                            <li><a href="I-CMS-Classic">Cases </a></li>
+                            <li><a href="I-CMS-Classic">Case review </a></li>
+                            <li><a href="I-CMS-Classic">Case materials </a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
