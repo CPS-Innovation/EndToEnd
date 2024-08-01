@@ -1,6 +1,6 @@
 {% extends "layoutCPS-NEW-CASEFILE.html" %}
 {% block header %}
-    {% include "../includes/banner-V5.html" %}
+    {% include "../includes/banner-V3.html" %}
 {% endblock %}
 {% block beforeContent %}
     {% include "../includes/modals/redaction-log.html" %}
@@ -31,29 +31,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% include "../includes/new-script.html" %}
 
-
-<style>
-
-.blueBoxCPS {
-display:block !important;
-}
-
-#global-navigation {
-    display:block !important;
-}
-
-#secondary-navigation {
-    display:block !important; 
-}
-</style>
 <script>
-
-        $( document ).ready(function() {
-            $('#global-navigation').show();
-            $('#secondary-navigation').show();
-            $('.my-cases').addClass('current');
-            $('.sub-case').addClass('current');
-    });
 
     $(".success-banner").hide();
 
@@ -85,13 +63,9 @@ display:block !important;
         });
     }
 
-
-
-
 </script>
 
-
-<!-- <div class="search-bar-wrapper case-file-page">
+<div class="search-bar-wrapper case-file-page">
     <div class="govuk-width-container">
         <div class="govuk-phase-banner header new-V3">
             <div class="govuk-grid-row">
@@ -105,7 +79,7 @@ display:block !important;
                     </div>
                 </div>
                 <div class="govuk-grid-column-three-quarters">
-                   
+                    <!-- <a href="javascript:history.back()" class="govuk-back-link">Find a case</a> -->
                     <div class="govuk-phase-banner__content">
                         <a href="" onClick="return openFeedbackSurveyModal()" class="feedback-survey">Improve this service</a>
                         <div class="loading-PII loading">
@@ -141,7 +115,7 @@ display:block !important;
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- <div class="govuk-grid-row" id=""> -->
 <div class="govuk-grid-row concept" id="cps-casework-concept">
@@ -153,7 +127,49 @@ display:block !important;
 
         </div>
 
-        
+        <div id="navbar" class="navbar">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter">
+                        <div class="case-info">
+                            <h1 class="govuk-heading-m">McLove, Eoin</h1>
+                            <table class="govuk-table">
+                                <tbody>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                            {% if data['searchURN'] %}
+                                                <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9">{{ data['searchURN'] }}/1</a>
+                                            {% else %}
+                                                <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9">45AA209820/1</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cap-wrapper">
+                            <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="location.href = 'H-review-case';">
+                                <span>Review case</span>
+                            </button>
+                        </div>
+                        <div class="alert tooltip">
+                            <a href="#" class="alert-button" id="alert">Document updates</a>
+                            <a href="#" class="alert-button tooltip" id="alert2">Document updates</a>
+                            <a href="#" class="alert-button tooltip" id="alert3" onClick="return openDiscardedModel()">Document updates</a>
+                            <span class="tooltiptext" id="header-alert">No document updates</span>
+                        </div>
+                        <div id="searchFormTest2" class="searchForm" method="get">
+                            <div class="search-button">Search case</div>
+                            <label class="govuk-label--s govuk-label" for="searchURNModal2" style="">Search case</label>
+                            <div class="searchForm-inner">
+                                <input class="govuk-input" id="searchURNModal2" name="searchURNModal2" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
+                                <div class="bba v2"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm2();">Search</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- ////////////////////////////////////////////// STICKY BAR - PART 1 - END ////////////////////////////////////////////// -->
 
@@ -227,13 +243,6 @@ display:block !important;
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter" style="padding-right: 0;">
-        <div class="searchForm-inner">
-            <input class="govuk-input" style="width: 98%;" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search materials..." />
-            <div class="bba" style="margin-left: -45px;"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
-        </div>
-    </div>
-
     {% include "../includes/documents/case-1.html" %}
 </div>
 
