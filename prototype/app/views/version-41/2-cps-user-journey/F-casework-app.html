@@ -51,8 +51,8 @@ display:block !important;
         $( document ).ready(function() {
             $('#global-navigation').show();
             $('#secondary-navigation').show();
-            $('.my-cases').addClass('current');
-            $('.sub-case').addClass('current');
+            $('.my-cases').attr('aria-current', 'page');
+            $('.sub-case').attr('aria-current', 'page');
     });
 
     $(".success-banner").hide();
