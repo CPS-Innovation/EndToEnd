@@ -159,7 +159,7 @@
 }
 
 </style>
-
+<script src="/public/javascripts/mojall.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var dropdownToggle = document.querySelector('.dropdown-toggle');
@@ -322,6 +322,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </nav>
         </div>
+
+                    <div class="moj-primary-navigation__search">
+                <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+                    <div class="moj-search-toggle__toggle"></div>
+                    <div class="moj-search-toggle__search">
+                        <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+                            <form action="" method="get">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                                        Search
+                                    </label>
+                                    <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                                        Enter case number
+                                    </div>
+                                    <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+                                </div>
+                                <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     </div>
 </div>
 
@@ -411,6 +436,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
  -->
+ <script type="text/javascript">
+MOJFrontend.initAll();
+</script>
 <style>body {visibility: hidden}</style>
 <script>
     $(document).ready(function () {
