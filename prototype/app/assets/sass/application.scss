@@ -6,6 +6,28 @@
     font-display:block;
   }
 
+  @font-face {
+  font-family: "NewTransport";
+    font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+/*  size-adjust: 95%;*/
+  src: url('/public/fonts/NewTransport/NewTransport-RegularWEB.woff2') format('woff2'), url('/public/fonts/NewTransport/NewTransport-RegularWEB.woff') format('woff');
+}
+
+
+
+@font-face {
+  font-family: "NewTransport";
+    font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+/*  size-adjust: 86.5%;*/
+  src: url('/public/fonts/NewTransport/NewTransport-BoldWEB.woff2') format('woff2'), url('/public/fonts/NewTransport/NewTransport-BoldWEB.woff') format('woff');
+}
+
+$govuk-font-family: "NewTransport" ;
+
 
 
 // global styles for <a> and <p> tags
