@@ -51,8 +51,8 @@ display:block !important;
         $( document ).ready(function() {
             $('#global-navigation').show();
             $('#secondary-navigation').show();
-            $('.my-cases').addClass('current');
-            $('.sub-case').addClass('current');
+            $('.my-cases').attr('aria-current', 'page');
+            $('.sub-case').attr('aria-current', 'page');
     });
 
     $(".success-banner").hide();
@@ -184,7 +184,7 @@ display:block !important;
 
                 <!-- ====== STICKY BAR - PART 2 - END ====== -->
 
-                <div id="docCopy" class="docCopy">
+                <div id="docCopy" class="docCopy" style="margin-top:0">
                     <div class="loading">
 <!--                         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                             <div class="govuk-notification-banner__header">
