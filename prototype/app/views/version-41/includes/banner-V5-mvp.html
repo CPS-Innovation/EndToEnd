@@ -4,6 +4,10 @@
 height:0 !important;
 }
 
+.moj-search-toggle__button {
+    font-size:16px;
+}
+
 .moj-sub-navigation__link[aria-current=page]{
 
 font-weight:700;
@@ -350,8 +354,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </nav>
         </div>
-        <div class="moj-primary-navigation__item" style="display: inline-block; margin-left: auto; position: absolute; right: 0; top: 2px;">
+        <div class="moj-primary-navigation__item" style="display: inline-block; margin-left: auto; position: absolute; right: 100px; top: 2px;">
             <a class="moj-primary-navigation__link my-feedback" href="https://as-web-endtoend-ux-dev.azurewebsites.net/version-41/2-cps-user-journey/D-my-cases" style="font-size: 16px; padding: 8px 10px 9px 10px;">Give feedback</a>
+        </div>
+                <div class="moj-primary-navigation__search">
+            <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+                <div class="moj-search-toggle__toggle"></div>
+                <div class="moj-search-toggle__search">
+                    <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+                        <form action="" method="get">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                                    Search
+                                </label>
+                                <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                                    Enter case number
+                                </div>
+                                <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+                            </div>
+                            <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -371,6 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </nav>
         </div>
+
     </div>
 </div>
 <script type="text/javascript">
