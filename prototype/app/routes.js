@@ -36,4 +36,13 @@ router.use('/version-42', require('./views/version-42/_routes'))
 router.use('/version-43', require('./views/version-43/_routes'))
 router.use('/version-44', require('./views/version-44/_routes'))
 
+router.get('/FCT-v1/2-cps-user-journey/C-task-list', function (req, res) {
+  // Use the query param to set the session flag
+  if (req.query.navTabs === 'true') {
+    req.session.data['navTabs'] = true;
+  }
+
+  res.render('FCT-v1/2-cps-user-journey/C-task-list');
+});
+
 module.exports = router
