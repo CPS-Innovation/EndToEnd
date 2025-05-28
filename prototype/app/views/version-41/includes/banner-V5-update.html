@@ -255,13 +255,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <!-- NOTE THE IF/THEN/ELSE IN THE LINK -->
                         <a class="moj-primary-navigation__link my-tasks"
 
-                         {% if data.navTabs==true %} target="_blank" {% else %}{% endif %}
+                         {% if data.navTabs=== 'true' %} target="_blank" {% else %}{% endif %}
                           href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/C-task-list">Tasks</a>
                     </li>
                     <li class="moj-primary-navigation__item">
                           <!-- NOTE THE IF/THEN/ELSE IN THE LINK -->
                         <a class="moj-primary-navigation__link my-cases" 
-                         {% if data.navTabs==true %} target="_blank" {% else %}{% endif %}
+                         {% if data.navTabs === 'true' %} target="_blank" {% else %}{% endif %}
                          href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/D-my-cases">Cases</a>
                     </li>
                 </ul>
@@ -278,19 +278,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li class="moj-sub-navigation__item" style="padding-top:0">
                        <!-- NOTE THE IF/THEN/ELSE IN THE LINK -->
                     <a class="moj-sub-navigation__link sub-overview" 
-                    {% if data.navTabs==true %} target="_blank" {% else %}{% endif %}
+                    {% if data.navTabs === 'true' %} target="_blank" {% else %}{% endif %}
                     href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/E-case-overview">Details</a>
                 </li>
                 <li class="moj-sub-navigation__item" style="padding-top:0">
                        <!-- NOTE THE IF/THEN/ELSE IN THE LINK -->
                     <a class="moj-sub-navigation__link sub-case" 
-                    {% if data.navTabs==true %} target="_blank" {% else %}{% endif %}
+                    {% if data.navTabs === 'true' %} target="_blank" {% else %}{% endif %}
                     href="https://as-web-endtoend-ux-dev.azurewebsites.net/version-41/2-cps-user-journey/F-casework-app">Materials</a>
                 </li>
                 <li class="moj-sub-navigation__item" style="padding-top:0">
                        <!-- NOTE THE IF/THEN/ELSE IN THE LINK -->
                     <a class="moj-sub-navigation__link sub-review" 
-                    {% if data.navTabs==true %} target="_blank" {% else %}{% endif %}
+                    {% if data.navTabs === 'true' %} target="_blank" {% else %}{% endif %}
                     href="https://witness-expenses.herokuapp.com/FCT-v1/2-cps-user-journey/L-case-review-html">Review</a>
                 </li>
             </ul>

@@ -5,12 +5,30 @@ const router = new express.Router()
 
 // GET SPRINT NAME - useful for relative templates
 
+// Middleware – place this near the top of routes.js
+router.use((req, res, next) => {
+  if (req.query.navTabs === 'true') {
+    req.session.data['navTabs'] = true;
+  } else if (req.query.navTabs === 'false') {
+    req.session.data['navTabs'] = false;
+  }
+  next();
+});
+
 // route middleware that will happen on every request
 router.use('/', (req, res, next) => {
      res.locals.currentURL = req.originalUrl; //current screen
      res.locals.prevURL = req.get('Referrer'); // previous screen
      console.log('previous page is: ' + res.locals.prevURL + " and current page is " + req.url + " " + res.locals.currentURL );
      next();
+});
+
+// Middleware – place this near the top of routes.js
+router.use((req, res, next) => {
+  if (req.query.navTabs === 'true') {
+    req.session.data['navTabs'] = true;
+  }
+  next();
 });
 
 // Old versions
@@ -36,13 +54,6 @@ router.use('/version-42', require('./views/version-42/_routes'))
 router.use('/version-43', require('./views/version-43/_routes'))
 router.use('/version-44', require('./views/version-44/_routes'))
 
-router.get('/FCT-v1/2-cps-user-journey/C-task-list', function (req, res) {
-  // Use the query param to set the session flag
-  if (req.query.navTabs === 'true') {
-    req.session.data['navTabs'] = true;
-  }
 
-  res.render('FCT-v1/2-cps-user-journey/C-task-list');
-});
 
 module.exports = router
